@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-mail Usinas</title>
+    <script type="text/javascript" src="script.js"></script>
+    <style>
+        #listaregistros{display: none;}
+        #cadastroregistros{
+            display: none;
+            flex-direction: column;
+            gap: 30px;
+        }    
+        body[page=lista] #listaregistros{display: block;}
+        body[page=cadastro] #cadastroregistros{display: flex;}
+        
+        Body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td{
+            font-size: 14px;
+            padding: 10px 15px;
+            border: solid #808080;
+        }
+
+        Button{
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #00BFFF;
+            color: #fff;
+            margin: 3px;
+            padding: 10px 15px;
+        }
+
+        button.cinza{
+            background-color: #ccc;
+            color: #666;
+        }
+
+        button.vermelho{
+            background-color: #B22222;
+        }
+
+        button.verde{
+            background-color: #808080;
+        }
+
+        button:hover{
+            opacity: 0.8;
+        }
+
+        input{
+            border: solid 1px #808080;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .label>div{
+            display: flex;
+        }
+
+        .label>div>input{
+            flex: 1;
+        }
+
+        .search {
+            position: flex;
+            width: 400px;
+            margin-bottom: 10px;
+            margin-left: 30%;
+            border-radius: 50px;
+        }
+        
+    </style>
+
+</head>
+<body page="lista">
+    
+    <div id="listaregistros">
+
+        <div>
+            <input class="search" placeholder="Qual o nome da usina?" autofocus id="procurar">
+        </div>
+         <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>
+                        <div>
+                            <button class="verde" onclick="show('cadastro', true)">Cadastrar E-mail</button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="listaRegistroBody"></tbody>
+        </table>
+    </div>
+    <form id="cadastroregistros">
+        <div class="label">
+            <div>ID</div>
+            <div>
+                <input type="number" readonly id="id"/>
+            </div>
+        </div>
+        <div class="label">
+            <div>Nome</div>
+            <div>
+                <input id="nome"/>
+            </div>
+        </div>
+        <div class="label">
+            <div>E-mail</div>
+            <div>
+                <input type="tel" id="email"/>
+            </div>
+        </div>
+        <div>
+            <button>Registrar</button>
+            <button onclick="show('lista')" class="cinza" type="button">Cancelar</button>
+        </div>
+    </form>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

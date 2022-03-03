@@ -1,0 +1,27 @@
+{
+  "name": "e-mail_usinas",
+  "productName": "Controle Usinas",
+  "version": "1.0.0",
+  "description": "E-mail da usinas para envior",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "build": "electron-builder main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "JordanAugusto",
+  "license": "ISC",
+  
+  "build": {
+    "appId": "emails",
+    "directories": {
+      "output": "dist"
+    },
+    "publish": null,
+    "win": {
+      "icon": "icon.png",
+      "target": "nsis"
+    }
+  }
+}
